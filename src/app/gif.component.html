@@ -1,0 +1,18 @@
+
+<div class="viewport">
+	<img
+		[src]="imageSrc"
+		[alt]="altText"
+		class="viewport__image"
+	/>
+</div>
+
+<div *ngIf="altText" class="text">
+	"{{ altText }}"
+</div>
+
+<ul class="tags">
+	<li *ngFor="let tag of tags" class="tags__tag">
+		{{ tag }}
+	</li>
+</ul>

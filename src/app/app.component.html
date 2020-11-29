@@ -1,0 +1,46 @@
+
+<header class="header">
+
+	<h1 class="header__title">
+		Ben's Reaction GIFs
+	</h1>
+
+	<div class="header__form">
+		<input
+			#filterRef
+			type="text"
+			autofocus
+			placeholder="Search GIFs..."
+			(input)="applyFilter( filterRef.value )"
+			(window:keydown.Meta.F)="$event.preventDefault(); filterRef.focus(); filterRef.select();"
+			class="header__input"
+		/>
+	</div>
+
+</header>
+
+<div *ngIf="isShowingToaster" class="toaster">
+	GIF image Url has been copied to your clipboard
+</div>
+
+<div *ngIf="isShowingNoResults" class="no-results">
+	Sorry, no GIFs match your search.
+</div>
+
+<ul class="items">
+	<li
+		*ngFor="let item of searchItems"
+		class="items__item"
+		[hidden]="( ! item.isVisible )">
+
+		<bn-gif
+			[imageUrl]="item.imageUrl"
+			[thumbnailUrl]="item.thumbnailUrl"
+			[altText]="item.entry.altText"
+			[tags]="item.entry.tags"
+			(click)="copyImageUrl( item )"
+			class="items__gif">
+		</bn-gif>
+
+	</li>
+</ul>

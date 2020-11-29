@@ -1,0 +1,93 @@
+
+:host {
+	display: block ;
+	padding-top: 110px ;
+}
+
+.header {
+	align-items: center ;
+	background-color: #ffffff ;
+	border-bottom: 1px solid #cccccc ;
+	display: flex ;
+	height: 70px ;
+	left: 0px ;
+	padding: 0px 15px 0px 15px ;
+	position: fixed ;
+	right: 0px ;
+	top: 0px ;
+
+	&__title {
+		flex: 0 0 auto ;
+		font-size: 30px ;
+		line-height: 30px ;
+		margin: 0px auto 0px 0px ;
+	}
+
+	&__form {
+		flex: 0 0 auto ;
+	}
+
+	&__input {
+		font-family: inherit ;
+		font-size: 18px ;
+		font-weight: 300 ;
+		margin: 0px 0px 0px 0px ;
+		padding: 7px 10px 7px 10px ;
+		text-align: center ;
+		width: 250px ;
+	}
+}
+
+.toaster {
+	animation-fill-mode: both ;
+	animation-duration: 300ms ;
+	animation-name: toaster-fade-in ;
+	background-color: #0035c9 ;
+	color: #ffffff ;
+	height: 70px ;
+	font-size: 22px ;
+	left: 0px ;
+	line-height: 70px ;
+	position: fixed ;
+	right: 0px ;
+	text-align: center ;
+	top: 0px ;
+	z-index: 2 ;
+}
+
+@keyframes toaster-fade-in {
+	from {
+		opacity: 0 ;
+		top: -70px ;
+	}
+	to {
+		opacity: 1 ;
+		top: 0px ;
+	}
+}
+
+.items {
+	align-items: center ;
+	display: flex ;
+	flex-wrap: wrap ;
+	justify-content: center ;
+	list-style-type: none ;
+	margin: 0px 0px 0px 0px ;
+	padding: 0px 0px 0px 0px ;
+
+	&__item {
+		margin: 20px 20px 20px 20px ;
+	}
+
+	&__gif {
+		cursor: pointer ;
+	}
+}
+
+.no-results {
+	font-size: 20px ;
+	font-style: italic ;
+	line-height: 25px ;
+	margin-top: 50px ;
+	text-align: center ;
+}
